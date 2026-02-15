@@ -1,3 +1,8 @@
+'use client';
+
+import { useRef, useCallback } from 'react';
+import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion';
+
 const projects = [
   {
     title: "Email Service Provider Migration",
@@ -43,7 +48,71 @@ const projects = [
   },
 ];
 
+const springConfig = { stiffness: 300, damping: 30 };
+
+function TiltCard({
+  children,
+  className,
+  skip,
+  index,
+}: {
+  children: React.ReactNode;
+  className: string;
+  skip: boolean;
+  index: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const rotateX = useMotionValue(0);
+  const rotateY = useMotionValue(0);
+  const springX = useSpring(rotateX, springConfig);
+  const springY = useSpring(rotateY, springConfig);
+
+  const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window);
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (skip || isTouchDevice) return;
+      const el = ref.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      rotateX.set((y - 0.5) * -10); // max 5deg each direction
+      rotateY.set((x - 0.5) * 10);
+    },
+    [skip, isTouchDevice, rotateX, rotateY],
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    rotateX.set(0);
+    rotateY.set(0);
+  }, [rotateX, rotateY]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={skip ? undefined : { opacity: 0, y: 30 }}
+      whileInView={skip ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={skip ? undefined : { duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
+      style={
+        skip
+          ? undefined
+          : { rotateX: springX, rotateY: springY, transformPerspective: 1000 }
+      }
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export default function Projects() {
+  const prefersReducedMotion = useReducedMotion();
+  const skip = !!prefersReducedMotion;
+
   return (
     <section id="projects" className="py-20 sm:py-28 px-4">
       <div className="max-w-6xl mx-auto">
@@ -52,15 +121,17 @@ export default function Projects() {
         </h2>
         <div className="w-16 h-1 bg-electricBlue mb-4 rounded-full" />
         <p className="text-mutedGray mb-12 max-w-2xl text-base sm:text-lg">
-          Production systems powering digital media at scale — from serverless
+          Production systems powering digital media at scale, from serverless
           data pipelines to AI-powered applications over decades of content.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ perspective: 1000 }}>
           {projects.map((p, index) => (
-            <div
+            <TiltCard
               key={p.title}
-              className={`bg-charcoal border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 hover:-translate-y-0.5 transition-all duration-300 group ${
+              skip={skip}
+              index={index}
+              className={`bg-charcoal card-glow border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(42,195,222,0.15)] transition-all transition-shadow duration-300 group ${
                 index < 2 ? "md:col-span-2" : "md:col-span-1"
               }`}
             >
@@ -84,7 +155,7 @@ export default function Projects() {
               <p className="text-xs text-steel italic">
                 Enterprise production system
               </p>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </div>

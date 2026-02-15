@@ -1,27 +1,91 @@
+'use client';
+
+import { motion, useReducedMotion } from 'framer-motion';
+import ParticleBackground from './ParticleBackground';
+
+const headlineWords = ['I', 'build', 'systems', 'that', 'scale.'];
+
 export default function Hero() {
+  const prefersReducedMotion = useReducedMotion();
+  const skip = !!prefersReducedMotion;
+
+  const wordVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.3 + i * 0.12, duration: 0.5, ease: 'easeOut' as const },
+    }),
+  };
+
+  const fadeUp = (delay: number) =>
+    skip
+      ? {}
+      : {
+          initial: { opacity: 0, y: 20 },
+          animate: { opacity: 1, y: 0 },
+          transition: { delay, duration: 0.6, ease: 'easeOut' as const },
+        };
+
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 px-4 hero-gradient">
+    <section className="relative min-h-screen flex items-center justify-center pt-16 px-4 hero-gradient">
+      <ParticleBackground />
       <div className="max-w-4xl mx-auto text-center">
-        <div className="mb-8">
+        <motion.div className="mb-8" {...fadeUp(0.1)}>
           <img
             src="/ryan-headshot.jpg"
             alt="Ryan Kirsch"
             className="w-36 h-36 rounded-full mx-auto object-cover border-2 border-electricBlue/40 shadow-lg shadow-electricBlue/10"
           />
-        </div>
-        <p className="font-mono text-electricBlue text-sm sm:text-base mb-4 tracking-wider">
+        </motion.div>
+
+        <motion.p
+          className="font-mono text-electricBlue text-sm sm:text-base mb-4 tracking-wider"
+          {...fadeUp(0.2)}
+        >
           Lead Backend Software Engineer &amp; Cloud Architect
-        </p>
+        </motion.p>
+
         <h1 className="font-mono text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-          I build systems that scale.{" "}
-          <span className="text-electricBlue">Full stop.</span>
+          {headlineWords.map((word, i) => (
+            <motion.span
+              key={word}
+              custom={i}
+              variants={skip ? undefined : wordVariants}
+              initial={skip ? undefined : 'hidden'}
+              animate={skip ? undefined : 'visible'}
+              className="inline-block mr-[0.3em]"
+            >
+              {word}
+            </motion.span>
+          ))}{' '}
+          <motion.span
+            className="text-electricBlue inline-block"
+            {...(skip
+              ? {}
+              : {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { delay: 0.3 + headlineWords.length * 0.12, duration: 0.5, ease: 'easeOut' },
+                })}
+          >
+            Full stop.
+          </motion.span>
         </h1>
-        <p className="text-lg sm:text-xl text-mutedGray max-w-2xl mx-auto mb-10 leading-relaxed">
+
+        <motion.p
+          className="text-lg sm:text-xl text-mutedGray max-w-2xl mx-auto mb-10 leading-relaxed"
+          {...fadeUp(1.2)}
+        >
           Lead Backend Engineer &amp; Cloud Architect, Philadelphia Inquirer.
           I design and deploy production infrastructure, data platforms, and AI/ML
           pipelines that handle millions of requests and petabytes of data.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          {...fadeUp(1.4)}
+        >
           <a
             href="#projects"
             className="px-8 py-3 bg-electricBlue text-navy font-semibold rounded-lg hover:scale-105 transition-transform duration-200"
@@ -34,16 +98,18 @@ export default function Hero() {
           >
             Get In Touch
           </a>
-        </div>
-        <p className="text-sm text-steel mt-6">
+        </motion.div>
+
+        <motion.p className="text-sm text-steel mt-6" {...fadeUp(1.6)}>
           Building systems, rolling BJJ, exploring AI
-        </p>
-        <div className="max-w-md mx-auto mt-8">
+        </motion.p>
+
+        <motion.div className="max-w-md mx-auto mt-8" {...fadeUp(1.8)}>
           <img
             src="https://streak-stats.demolab.com?user=agalloch88&theme=tokyonight&hide_border=true&background=1a1b26"
             alt="GitHub Streak"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -2,12 +2,12 @@ const timeline = [
   {
     role: "Lead Backend Software Engineer",
     company: "The Philadelphia Inquirer",
-    period: "Sep 2022 – Present",
+    period: "Sep 2022 - Present",
     bullets: [
       "Spearheaded ESP migration from Salesforce Marketing Cloud to Marigold SailThru; architected end-to-end data pipelines with Salesforce Service Cloud, delivering one month ahead of schedule, $100K+ annual savings",
       "Led migration off Informatica ETL by reengineering pipelines in Python/PySpark, 50% more resilient, $120K/year savings",
-      "Architected serverless ETL pipelines on AWS (Serverless Framework) — S3, Lambda, EventBridge, SQS, DynamoDB — replacing legacy subscription/billing systems, enabling real-time Salesforce→SailThru sync via event-driven architecture",
-      "Developed privately-hosted AI app enabling chat-based RAG over proprietary historical archive (1977–present)",
+      "Architected serverless ETL pipelines on AWS (Serverless Framework) with S3, Lambda, EventBridge, SQS, DynamoDB, replacing legacy subscription/billing systems, enabling real-time Salesforce-to-SailThru sync via event-driven architecture",
+      "Developed privately-hosted AI app enabling chat-based RAG over proprietary historical archive (1977-present)",
       "Integrated internal HR chatbot with OpenAI API for Slack-based RAG access to handbook, PTO, performance goals, org charts",
       "DevSecOps best practices to minimize Salesforce-induced outages and bot attacks; optimized checkout flow increasing conversion 12% YoY",
       "Led migration from legacy print subscription management to cloud-first serverless solution, cutting operational costs 75% and manual workload 50%",
@@ -16,18 +16,18 @@ const timeline = [
   {
     role: "Software Engineer",
     company: "Longevity Consulting",
-    period: "Aug 2021 – Sep 2022",
+    period: "Aug 2021 - Sep 2022",
     bullets: [
       "Architected full stack GRC platform with React, Django, FastAPI, GraphQL, serverless on AWS FarGate, CICD pipelines",
       "Led globally distributed agile team through full SDLC",
       "Developed RPA solutions using UiPath Studio saving $3K+/employee/year",
-      "Assisted US Dept. of Education in Drupal 7→9 migration, AWS/GovCloud compliance, PIV/SAML auth",
+      "Assisted US Dept. of Education in Drupal 7 to 9 migration, AWS/GovCloud compliance, PIV/SAML auth",
     ],
   },
   {
     role: "Instructor & Career Coach",
     company: "Nucamp Coding Bootcamp",
-    period: "Dec 2021 – Dec 2022",
+    period: "Dec 2021 - Dec 2022",
     bullets: [
       "Taught 4-5 week cohorts of up to 12 web dev students, 4-hour live workshops weekly",
     ],
@@ -35,7 +35,7 @@ const timeline = [
   {
     role: "Software Engineer",
     company: "Loxe Inc",
-    period: "Jul 2021 – Oct 2022",
+    period: "Jul 2021 - Oct 2022",
     bullets: [
       "Built decentralized mediation platform on Cardano blockchain",
       "React + Tailwind frontend, GraphQL, crypto wallet integration (CCVault, Nami, Flint), KYC via SumSub",
@@ -44,7 +44,7 @@ const timeline = [
   {
     role: "IT Project Manager",
     company: "Asset Strategies International",
-    period: "Sep 2011 – Aug 2021",
+    period: "Sep 2011 - Aug 2021",
     bullets: [
       "Designed secure services with C# and SQL",
       "Orchestrated CRM/eCommerce integration (HubSpot, Shopify) with proprietary workflow sync",

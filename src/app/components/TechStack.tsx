@@ -1,3 +1,7 @@
+'use client';
+
+import { motion, useReducedMotion } from 'framer-motion';
+
 const categories = [
   {
     title: "Languages & Frameworks",
@@ -22,6 +26,9 @@ const categories = [
 ];
 
 export default function TechStack() {
+  const prefersReducedMotion = useReducedMotion();
+  const skip = !!prefersReducedMotion;
+
   return (
     <section id="skills" className="py-20 sm:py-28 px-4">
       <div className="max-w-6xl mx-auto">
@@ -31,11 +38,15 @@ export default function TechStack() {
         <div className="w-16 h-1 bg-electricBlue mb-12 rounded-full" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {categories.map((cat, index) => (
-            <div
+          {categories.map((cat, catIndex) => (
+            <motion.div
               key={cat.title}
-              className={`bg-charcoal border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 transition-all duration-300 hover:-translate-y-0.5 ${
-                index >= 2 ? "md:col-span-2" : "md:col-span-1"
+              initial={skip ? undefined : { opacity: 0, y: 30 }}
+              whileInView={skip ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={skip ? undefined : { duration: 0.5, delay: catIndex * 0.1, ease: 'easeOut' }}
+              className={`bg-charcoal card-glow border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 hover:shadow-[0_0_30px_rgba(42,195,222,0.15)] transition-all transition-shadow duration-300 hover:-translate-y-0.5 ${
+                catIndex >= 2 ? "md:col-span-2" : "md:col-span-1"
               }`}
             >
               <h3 className="font-mono text-lg font-semibold text-electricBlue mb-1">
@@ -43,16 +54,20 @@ export default function TechStack() {
               </h3>
               <p className="text-sm text-mutedGray mb-4">{cat.description}</p>
               <div className="flex flex-wrap gap-2">
-                {cat.items.map((item) => (
-                  <span
+                {cat.items.map((item, itemIndex) => (
+                  <motion.span
                     key={item}
+                    initial={skip ? undefined : { opacity: 0, scale: 0.8 }}
+                    whileInView={skip ? undefined : { opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={skip ? undefined : { duration: 0.3, delay: catIndex * 0.1 + itemIndex * 0.04, ease: 'easeOut' }}
                     className="px-3 py-1 text-xs font-mono bg-navy border border-steel/30 text-lightGray rounded-full hover:border-cyberTeal/50 hover:text-cyberTeal transition-colors duration-200"
                   >
                     {item}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

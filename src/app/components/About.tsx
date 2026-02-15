@@ -42,7 +42,7 @@ export default function About() {
             />
             <p className="text-sm text-steel italic">
               When I&apos;m not engineering systems, you&apos;ll find me on the mats
-              training Brazilian Jiu-Jitsu — here with Professor Fred Silva at
+              training Brazilian Jiu-Jitsu, here with Professor Fred Silva at
               Lucas Lepri Jiu Jitsu Academy in Charlotte, NC. The discipline,
               problem-solving, and continuous improvement translate directly to
               how I approach code.
