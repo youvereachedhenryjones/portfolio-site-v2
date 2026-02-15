@@ -37,15 +37,15 @@ export default function About() {
           <div className="flex flex-col sm:flex-row items-center gap-6 bg-charcoal border border-electricBlue/10 rounded-xl p-6">
             <img
               src="/ryan-bjj.jpg"
-              alt="Ryan with Lucas Lepri at Lepri Jiu Jitsu Academy"
+              alt="Ryan with Professor Fred Silva at Lucas Lepri Jiu Jitsu Academy"
               className="w-48 h-48 rounded-lg object-cover flex-shrink-0"
             />
             <p className="text-sm text-steel italic">
               When I&apos;m not engineering systems, you&apos;ll find me on the mats
-              training Brazilian Jiu-Jitsu — here with Lucas Lepri, one of the
-              greatest competitors in BJJ history, at Lepri Jiu Jitsu Academy. The
-              discipline, problem-solving, and continuous improvement translate
-              directly to how I approach code.
+              training Brazilian Jiu-Jitsu — here with Professor Fred Silva at
+              Lucas Lepri Jiu Jitsu Academy in Charlotte, NC. The discipline,
+              problem-solving, and continuous improvement translate directly to
+              how I approach code.
             </p>
           </div>
         </div>
