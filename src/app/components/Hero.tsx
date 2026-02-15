@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 px-4">
+    <section className="min-h-screen flex items-center justify-center pt-16 px-4 hero-gradient">
       <div className="max-w-4xl mx-auto text-center">
         <p className="font-mono text-electricBlue text-sm sm:text-base mb-4 tracking-wider">
           Lead Backend Engineer &amp; Cloud Architect
@@ -27,6 +27,15 @@ export default function Hero() {
           >
             Get In Touch
           </a>
+        </div>
+        <p className="text-sm text-steel mt-6">
+          Building systems, rolling BJJ, exploring AI
+        </p>
+        <div className="max-w-md mx-auto mt-8">
+          <img
+            src="https://streak-stats.demolab.com?user=ryankirsch&theme=tokyonight&hide_border=true&background=1a1b26"
+            alt="GitHub Streak"
+          />
         </div>
       </div>
     </section>

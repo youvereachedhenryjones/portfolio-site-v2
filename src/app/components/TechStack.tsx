@@ -41,10 +41,12 @@ export default function TechStack() {
         <div className="w-16 h-1 bg-electricBlue mb-12 rounded-full" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {categories.map((cat) => (
+          {categories.map((cat, index) => (
             <div
               key={cat.title}
-              className="bg-charcoal border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 transition-all duration-300 hover:-translate-y-0.5"
+              className={`bg-charcoal border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 transition-all duration-300 hover:-translate-y-0.5 ${
+                index >= 2 ? "md:col-span-2" : "md:col-span-1"
+              }`}
             >
               <h3 className="font-mono text-lg font-semibold text-electricBlue mb-1">
                 {cat.title}

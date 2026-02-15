@@ -48,13 +48,8 @@ export default function Contact() {
           >
             GitHub
           </a>
-          <a
-            href="#"
-            className="text-mutedGray hover:text-electricBlue transition-colors"
-          >
-            Download Resume
-          </a>
         </div>
+        <p className="text-xs text-steel mt-6">Thanks for visiting</p>
       </div>
     </section>
   );

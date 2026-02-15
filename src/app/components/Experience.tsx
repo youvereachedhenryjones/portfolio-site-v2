@@ -15,7 +15,7 @@ const timeline = [
   },
   {
     role: "Full-Stack Developer",
-    company: "First Dev Role",
+    company: "—",
     period: "July 2021 – 2022",
     description:
       "Transitioned from business operations to software development. Built production applications using modern web technologies.",

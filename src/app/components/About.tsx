@@ -33,6 +33,11 @@ export default function About() {
             Currently expanding into data engineering and AI/ML because the future
             of backend is data-driven, and I&apos;m building it.
           </p>
+          <p className="text-sm text-steel italic">
+            When I am not engineering systems, you will find me on the mats
+            training Brazilian Jiu-Jitsu — the discipline, problem-solving, and
+            continuous improvement translate directly to how I approach code.
+          </p>
         </div>
       </div>
     </section>
