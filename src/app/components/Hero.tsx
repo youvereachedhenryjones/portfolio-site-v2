@@ -46,7 +46,7 @@ export default function Hero() {
           Lead Backend Software Engineer &amp; Cloud Architect
         </motion.p>
 
-        <h1 className="font-mono text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        <h1 className="font-mono text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 gradient-text">
           {headlineWords.map((word, i) => (
             <motion.span
               key={word}

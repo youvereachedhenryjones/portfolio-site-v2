@@ -17,20 +17,20 @@ export default function About() {
           <p>
             After a decade in strategic communications and business operations, I
             made a calculated bet during COVID: teach myself full-stack development
-            through a MERN bootcamp, then get my hands dirty with real code. Three
-            and a half years later, I&apos;m architecting cloud infrastructure and
+            through a <span className="tech-term">MERN</span> bootcamp, then get my hands dirty with real code. Three
+            and a half years later, I&apos;m architecting <span className="tech-term">cloud infrastructure</span> and
             data pipelines at the Philadelphia Inquirer, designing systems that
             ingest, process, and serve content at scale.
           </p>
           <p>
             My unconventional path gives me something most engineers don&apos;t have:
             deep business context. I understand both the technical requirements and
-            the strategic implications. Whether I&apos;m optimizing database queries,
-            containerizing microservices, or building ML pipelines, I&apos;m solving
+            the strategic implications. Whether I&apos;m optimizing <span className="tech-term">database queries</span>,
+            containerizing microservices, or building <span className="tech-term">ML pipelines</span>, I&apos;m solving
             real problems that move the needle.
           </p>
           <p className="text-cyberTeal font-medium">
-            Currently expanding into data engineering and AI/ML because the future
+            Currently expanding into data engineering and <span className="tech-term">AI/ML</span> because the future
             of backend is data-driven, and I&apos;m building it.
           </p>
 
