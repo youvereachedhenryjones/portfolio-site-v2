@@ -36,7 +36,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/ryan-s-kirsch"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-mutedGray hover:text-electricBlue transition-colors"
+            className="text-mutedGray hover:text-white transition-colors"
           >
             LinkedIn
           </a>
@@ -44,7 +44,7 @@ export default function Contact() {
             href="https://github.com/agalloch88"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-mutedGray hover:text-electricBlue transition-colors"
+            className="text-mutedGray hover:text-white transition-colors"
           >
             GitHub
           </a>

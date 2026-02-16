@@ -61,7 +61,7 @@ export default function TechStack() {
                     whileInView={skip ? undefined : { opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={skip ? undefined : { duration: 0.3, delay: catIndex * 0.1 + itemIndex * 0.04, ease: 'easeOut' }}
-                    className="px-3 py-1 text-xs font-mono bg-navy border border-steel/30 text-lightGray rounded-full hover:border-cyberTeal/50 hover:text-cyberTeal transition-colors duration-200"
+                    className="px-3 py-1 text-xs font-mono bg-navy border border-steel/30 text-lightGray rounded-full hover:border-cyberTeal/50 hover:text-white hover:bg-cyberTeal/10 transition-colors duration-200"
                   >
                     {item}
                   </motion.span>

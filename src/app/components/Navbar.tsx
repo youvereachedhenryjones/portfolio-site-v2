@@ -27,7 +27,7 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm text-mutedGray hover:text-electricBlue transition-colors duration-300"
+                className="text-sm text-mutedGray hover:text-white transition-colors duration-300"
               >
                 {l.label}
               </a>
@@ -60,7 +60,7 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block text-sm text-mutedGray hover:text-electricBlue transition-colors"
+                className="block text-sm text-mutedGray hover:text-white transition-colors"
               >
                 {l.label}
               </a>

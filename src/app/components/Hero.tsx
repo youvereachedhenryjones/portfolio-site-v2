@@ -94,7 +94,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="px-8 py-3 border border-electricBlue text-electricBlue rounded-lg hover:bg-electricBlue/10 transition-colors duration-200"
+            className="px-8 py-3 border border-electricBlue text-electricBlue rounded-lg hover:bg-electricBlue/10 hover:text-white transition-colors duration-200"
           >
             Get In Touch
           </a>

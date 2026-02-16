@@ -135,7 +135,7 @@ export default function Projects() {
                 index < 2 ? "md:col-span-2" : "md:col-span-1"
               }`}
             >
-              <h3 className="font-mono text-lg font-semibold text-white mb-2 group-hover:text-electricBlue transition-colors">
+              <h3 className="font-mono text-lg font-semibold text-white mb-2 group-hover:text-lightGray transition-colors">
                 {p.title}
               </h3>
               <p className="text-mutedGray text-sm mb-3 leading-relaxed">
