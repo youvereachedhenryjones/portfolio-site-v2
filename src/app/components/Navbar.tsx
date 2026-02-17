@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const links = [
   { label: "About", href: "#about" },
@@ -12,6 +12,76 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  const handleMenuKeyDown = useCallback((event: KeyboardEvent) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      setOpen(false);
+      return;
+    }
+
+    if (event.key !== "Tab") {
+      return;
+    }
+
+    const menu = menuRef.current;
+    if (!menu) {
+      return;
+    }
+
+    const focusable = Array.from(
+      menu.querySelectorAll<HTMLAnchorElement | HTMLButtonElement>("a, button")
+    );
+
+    if (focusable.length === 0) {
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey && active === first) {
+      event.preventDefault();
+      last.focus();
+      return;
+    }
+
+    if (!event.shiftKey && active === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }, [setOpen]);
+
+  useEffect(() => {
+    if (!open) {
+      if (buttonRef.current) {
+        buttonRef.current.focus();
+      }
+      return;
+    }
+
+    const menu = menuRef.current;
+    if (!menu) {
+      return;
+    }
+
+    const focusable = Array.from(
+      menu.querySelectorAll<HTMLAnchorElement | HTMLButtonElement>("a, button")
+    );
+
+    if (focusable.length > 0) {
+      focusable[0].focus();
+    }
+
+    menu.addEventListener("keydown", handleMenuKeyDown);
+
+    return () => {
+      menu.removeEventListener("keydown", handleMenuKeyDown);
+    };
+  }, [open, handleMenuKeyDown]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/80 backdrop-blur-md border-b border-electricBlue/10">
@@ -36,6 +106,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
+            ref={buttonRef}
             onClick={() => setOpen(!open)}
             className="md:hidden text-lightGray"
             aria-label="Toggle menu"
@@ -53,7 +124,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-charcoal border-t border-electricBlue/10">
+        <div ref={menuRef} className="md:hidden bg-charcoal border-t border-electricBlue/10">
           <div className="px-4 py-4 space-y-3">
             {links.map((l) => (
               <a

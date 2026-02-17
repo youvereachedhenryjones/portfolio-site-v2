@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import ParticleBackground from './ParticleBackground';
 
@@ -8,6 +9,7 @@ const headlineWords = ['I', 'build', 'systems', 'that', 'scale.'];
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const skip = !!prefersReducedMotion;
+  const [streakErrored, setStreakErrored] = useState(false);
 
   const wordVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -32,11 +34,14 @@ export default function Hero() {
       <ParticleBackground />
       <div className="max-w-4xl mx-auto text-center">
         <motion.div className="mb-8" {...fadeUp(0.1)}>
-          <img
-            src="/ryan-headshot.jpg"
-            alt="Ryan Kirsch"
-            className="w-36 h-36 rounded-full mx-auto object-cover border-2 border-electricBlue/40 shadow-lg shadow-electricBlue/10"
-          />
+          <picture>
+            <source srcSet="/ryan-headshot.webp" type="image/webp" />
+            <img
+              src="/ryan-headshot.jpg"
+              alt="Ryan Kirsch"
+              className="w-36 h-36 rounded-full mx-auto object-cover border-2 border-electricBlue/40 shadow-lg shadow-electricBlue/10"
+            />
+          </picture>
         </motion.div>
 
         <motion.p
@@ -105,10 +110,18 @@ export default function Hero() {
         </motion.p>
 
         <motion.div className="max-w-md mx-auto mt-8" {...fadeUp(1.8)}>
-          <img
-            src="https://streak-stats.demolab.com?user=agalloch88&theme=tokyonight&hide_border=true&background=1a1b26"
-            alt="GitHub Streak"
-          />
+          {!streakErrored ? (
+            <img
+              src="https://streak-stats.demolab.com?user=agalloch88&theme=tokyonight&hide_border=true&background=1a1b26"
+              loading="lazy"
+              alt="Ryan Kirsch's GitHub contribution streak statistics"
+              onError={() => setStreakErrored(true)}
+            />
+          ) : (
+            <div className="text-sm text-steel text-center">
+              GitHub streak stats temporarily unavailable
+            </div>
+          )}
         </motion.div>
       </div>
     </section>
