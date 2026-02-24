@@ -7,6 +7,7 @@ import { loadSlim } from '@tsparticles/slim';
 
 export default function ParticleBackground() {
   const [ready, setReady] = useState(false);
+  const [prefersReduced, setPrefersReduced] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -14,7 +15,18 @@ export default function ParticleBackground() {
     }).then(() => setReady(true));
   }, []);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updatePreference = () => setPrefersReduced(mediaQuery.matches);
+
+    updatePreference();
+    mediaQuery.addEventListener('change', updatePreference);
+
+    return () => mediaQuery.removeEventListener('change', updatePreference);
+  }, []);
+
   if (!ready) return null;
+  if (prefersReduced) return null;
 
   return (
     <Particles

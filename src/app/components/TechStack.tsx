@@ -1,33 +1,71 @@
 'use client';
 
+import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
 const categories = [
   {
-    title: "Languages & Frameworks",
-    description: "Core development stack",
-    items: ["Python", "TypeScript", "JavaScript", "HTML", "CSS", "React", "Node.js", "NextJS", "Flask", "Django", "FastAPI"],
+    title: "Languages & Engineering",
+    description: "Core stack",
+    items: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "FastAPI", "PostgreSQL", "Redis"],
   },
   {
-    title: "Cloud & Infrastructure",
-    description: "Platforms & DevOps",
-    items: ["AWS", "GCP", "Docker", "Kubernetes", "Serverless Framework", "ECS/ECR", "EKS", "FarGate", "Lambda", "API Gateway", "EC2", "IAM", "KMS"],
+    title: "Cloud, Data & AI",
+    description: "Platforms & pipelines",
+    items: ["AWS", "GCP", "Docker", "Kubernetes", "BigQuery", "PySpark", "OpenAI API", "GraphQL"],
   },
-  {
-    title: "Data Engineering",
-    description: "Pipelines, messaging & databases",
-    items: ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "Elasticsearch", "BigQuery", "S3", "SQS", "SNS", "EventBridge", "Kinesis", "PySpark"],
-  },
-  {
-    title: "Enterprise & Integration",
-    description: "CRM, automation & AI",
-    items: ["Salesforce", "GraphQL", "OpenAI API", "RAG", "UiPath", "HubSpot", "Shopify"],
-  },
+];
+
+const fullStackSkills = [
+  "Python",
+  "TypeScript",
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "React",
+  "Node.js",
+  "NextJS",
+  "Flask",
+  "Django",
+  "FastAPI",
+  "AWS",
+  "GCP",
+  "Docker",
+  "Kubernetes",
+  "Serverless Framework",
+  "ECS/ECR",
+  "EKS",
+  "FarGate",
+  "Lambda",
+  "API Gateway",
+  "EC2",
+  "IAM",
+  "KMS",
+  "PostgreSQL",
+  "MongoDB",
+  "DynamoDB",
+  "Redis",
+  "Elasticsearch",
+  "BigQuery",
+  "S3",
+  "SQS",
+  "SNS",
+  "EventBridge",
+  "Kinesis",
+  "PySpark",
+  "Salesforce",
+  "GraphQL",
+  "OpenAI API",
+  "RAG",
+  "UiPath",
+  "HubSpot",
+  "Shopify",
 ];
 
 export default function TechStack() {
   const prefersReducedMotion = useReducedMotion();
   const skip = !!prefersReducedMotion;
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <section id="skills" className="py-20 sm:py-28 px-4">
@@ -45,9 +83,7 @@ export default function TechStack() {
               whileInView={skip ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={skip ? undefined : { duration: 0.5, delay: catIndex * 0.1, ease: 'easeOut' }}
-              className={`bg-charcoal card-glow border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 hover:shadow-[0_0_30px_rgba(42,195,222,0.15)] transition-all transition-shadow duration-300 hover:-translate-y-0.5 ${
-                catIndex >= 2 ? "md:col-span-2" : "md:col-span-1"
-              }`}
+              className="bg-charcoal card-glow border border-electricBlue/10 rounded-xl p-6 hover:border-electricBlue/30 hover:shadow-[0_0_30px_rgba(42,195,222,0.15)] transition-all transition-shadow duration-300 hover:-translate-y-0.5 md:col-span-1"
             >
               <h3 className="font-mono text-lg font-semibold text-electricBlue mb-1">
                 {cat.title}
@@ -70,6 +106,32 @@ export default function TechStack() {
             </motion.div>
           ))}
         </div>
+
+        <div className="flex justify-center mt-8">
+          <button
+            type="button"
+            onClick={() => setIsExpanded((prev) => !prev)}
+            aria-expanded={isExpanded}
+            className="font-mono text-sm text-electricBlue hover:text-cyberTeal transition-colors duration-200"
+          >
+            {isExpanded ? "Hide full stack" : "Show full stack ↓"}
+          </button>
+        </div>
+
+        {isExpanded && (
+          <div className="mt-6 bg-charcoal/60 border border-electricBlue/10 rounded-xl p-6">
+            <div className="flex flex-wrap gap-2">
+              {fullStackSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 text-xs font-mono bg-navy border border-steel/30 text-lightGray rounded-full"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

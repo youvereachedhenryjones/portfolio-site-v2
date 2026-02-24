@@ -95,13 +95,13 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="px-8 py-3 bg-electricBlue text-navy font-semibold rounded-lg hover:scale-105 transition-transform duration-200"
+            className="px-8 py-3 bg-electricBlue text-navy font-bold shadow-[0_0_20px_rgba(42,195,222,0.35)] rounded-lg hover:scale-105 transition-transform duration-200"
           >
             View My Work
           </a>
           <a
             href="#contact"
-            className="px-8 py-3 border border-electricBlue text-electricBlue rounded-lg hover:bg-electricBlue/10 hover:text-white transition-colors duration-200"
+            className="px-8 py-3 border border-electricBlue text-electricBlue font-semibold rounded-lg hover:bg-electricBlue/10 hover:text-white transition-colors duration-200"
           >
             Get In Touch
           </a>
