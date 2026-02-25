@@ -10,6 +10,7 @@ const projects = [
       "Built an end-to-end ELT pipeline ingesting real data from Oura Ring, GitHub, and OpenWeatherMap APIs. Transforms through a medallion architecture using Dagster for asset-centric orchestration and dbt Core for SQL transformations, with DuckDB as the OLAP warehouse. Includes 17 automated data quality tests and a Streamlit dashboard for wellness correlations.",
     metrics: "3 live APIs • 17 dbt tests • Medallion architecture",
     tags: ["Dagster", "dbt Core", "DuckDB", "Python", "Streamlit"],
+    link: "https://github.com/agalloch88/data-pipeline",
   },
   {
     title: "Email Service Provider Migration",
