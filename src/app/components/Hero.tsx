@@ -31,6 +31,10 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 px-4 hero-gradient">
+      {/* Meng To aura orbs */}
+      <div className="aura-orb aura-orb-1" aria-hidden="true" />
+      <div className="aura-orb aura-orb-2" aria-hidden="true" />
+      <div className="aura-orb aura-orb-3" aria-hidden="true" />
       <ParticleBackground />
       <div className="max-w-4xl mx-auto text-center">
         <motion.div className="mb-8" {...fadeUp(0.1)}>
