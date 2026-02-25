@@ -53,6 +53,22 @@ const projects = [
     metrics: "Full stack • Enterprise GRC",
     tags: ["React", "Django", "FastAPI", "GraphQL", "AWS FarGate"],
   },
+  {
+    title: "Roampage — Surprise Trip Planner",
+    description:
+      "Built a full-stack web app for planning and revealing surprise trips to partners. Features Supabase auth, PIN-protected trip reveal pages, LemonSqueezy payment integration for Pro tier, a 3D globe with real destination markers, and occasion-specific gift landing pages. Shipped from idea to paying product in under 30 days.",
+    metrics: "Live at roampage.vercel.app · LemonSqueezy Pro tier",
+    tags: ["Next.js 16", "Supabase", "TypeScript", "Tailwind", "LemonSqueezy", "WebGL"],
+    link: "https://roampage.vercel.app",
+  },
+  {
+    title: "TryAngles — BJJ Apparel Brand",
+    description:
+      "Designed and built the brand identity and landing page for a BJJ lifestyle apparel brand. Includes a custom Stripe-style WebGL FBM shader mesh gradient written in raw GLSL, mobile fallback CSS gradient, and email capture waitlist flow. Zero dependencies for the WebGL effect.",
+    metrics: "Live at tryangles.shop · WebGL GLSL shader",
+    tags: ["Static HTML", "WebGL / GLSL", "CSS", "JavaScript", "Brand Design"],
+    link: "https://tryangles.shop",
+  },
 ];
 
 const springConfig = { stiffness: 300, damping: 30 };
@@ -159,9 +175,18 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <p className="relative z-10 text-xs text-steel italic">
-                Enterprise production system
-              </p>
+              {p.link ? (
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative z-10 text-xs text-electricBlue hover:underline"
+                >
+                  View live →
+                </a>
+              ) : (
+                <p className="relative z-10 text-xs text-steel italic">Enterprise production system</p>
+              )}
             </TiltCard>
           ))}
         </div>
