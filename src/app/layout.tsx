@@ -15,15 +15,15 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 const description =
-  "Lead Backend Engineer at Philadelphia Inquirer building data platforms and pipelines. Specializing in dbt, Dagster, PySpark, Airflow, and cloud infrastructure on AWS/GCP/Azure. Data Engineering focused.";
+  "Data Engineer and Lead Backend Engineer at the Philadelphia Inquirer. Building production pipelines in Python, dbt, Dagster, and PySpark. Focused on data platform architecture, medallion modeling, and AI/ML infrastructure on AWS, GCP, and Azure.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ryankirsch.dev"),
-  title: "Ryan Kirsch | Backend Engineer and Data Engineer",
+  title: "Ryan Kirsch | Data Engineer | dbt, Python, and Pipeline Architecture",
   description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Ryan Kirsch | Backend Engineer and Data Engineer",
+    title: "Ryan Kirsch | Data Engineer | dbt, Python, and Pipeline Architecture",
     description,
     type: "website",
     siteName: "Ryan Kirsch",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ryan Kirsch | Backend Engineer and Data Engineer",
+    title: "Ryan Kirsch | Data Engineer | dbt, Python, and Pipeline Architecture",
     description,
     images: ["/ryan-headshot.jpg"],
   },

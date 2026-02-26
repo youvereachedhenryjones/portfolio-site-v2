@@ -30,8 +30,7 @@ export default function About() {
             problems with measurable outcomes: systems that cut costs, reduce latency, and ship on time.
           </p>
           <p className="text-cyberTeal font-medium">
-            Currently expanding into data engineering and <span className="tech-term">AI/ML</span> because the future
-            of backend is data-driven, and I&apos;m building it.
+            My focus now is data engineering and <span className="tech-term">AI/ML</span> infrastructure: building the pipelines, platforms, and systems that power intelligent applications.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-6 bg-charcoal border border-electricBlue/10 rounded-xl p-6">
