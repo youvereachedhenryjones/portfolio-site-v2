@@ -7,6 +7,17 @@ export const metadata: Metadata = {
     "I had three APIs, a laptop, and a genuine question: can you build a production-quality data pipeline without a cloud bill?",
   openGraph: {
     title: "The Local-First Data Stack: Practical Lessons from Dagster, dbt, and DuckDB",
+    description:
+      "I had three APIs, a laptop, and a genuine question: can you build a production-quality data pipeline without a cloud bill?",
+    type: "article",
+    url: "https://ryankirsch.dev/blog/dagster-dbt-duckdb",
+    siteName: "Ryan Kirsch",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Local-First Data Stack: Practical Lessons from Dagster, dbt, and DuckDB",
+    description:
+      "I had three APIs, a laptop, and a genuine question: can you build a production-quality data pipeline without a cloud bill?",
   },
   alternates: { canonical: "/blog/dagster-dbt-duckdb" },
 };
@@ -238,49 +249,51 @@ export default function DagsterDbtDuckDbPost() {
         </div>
 
         <div className="mt-10 pt-8 border-t border-steel/30 flex items-center gap-4">
-          <span className="text-sm text-mutedGray">Share:</span>
+          <span className="text-sm text-mutedGray font-mono">Share:</span>
           <a
             href={`https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`}
             className="text-sm text-electricBlue hover:text-white transition-colors"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             LinkedIn
           </a>
           <a
-            href={`https://twitter.com/intent/tweet?url=${postUrl}&text=${postTitle}`}
+            href={`https://twitter.com/intent/tweet?text=${postTitle}&url=${postUrl}`}
             className="text-sm text-electricBlue hover:text-white transition-colors"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Twitter/X
           </a>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 rounded-xl border border-steel/30 bg-charcoal/40 p-6 sm:flex-row sm:items-center">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-steel/30 text-sm font-mono text-white">
+        <div className="mt-12 pt-8 border-t border-steel/30 flex gap-4 items-start">
+          <div className="w-12 h-12 rounded-full bg-electricBlue/20 border border-electricBlue/30 flex items-center justify-center text-electricBlue font-bold flex-shrink-0 text-sm">
             RK
           </div>
           <div>
-            <p className="text-sm text-mutedGray">
-              Ryan Kirsch is a backend engineer and data engineer focused on local-first
-              systems, resilient data pipelines, and pragmatic tooling.
+            <p className="font-semibold text-white">Ryan Kirsch</p>
+            <p className="text-sm text-mutedGray mt-1">
+              Data Engineer at the Philadelphia Inquirer. Writing about practical data engineering,
+              local-first stacks, and systems that scale without a cloud bill.
             </p>
             <Link
-              href="/#projects"
-              className="mt-3 inline-flex text-sm text-electricBlue hover:text-white transition-colors"
+              href="/"
+              className="text-sm text-electricBlue hover:text-white transition-colors mt-2 inline-block"
             >
-              View portfolio
+              View portfolio →
             </Link>
           </div>
         </div>
 
-        <div className="mt-12">
-          <Link
-            href="/"
-            className="text-sm text-electricBlue hover:text-white transition-colors"
-          >
-            ← Back to home
+        <div className="mt-12 text-sm text-electricBlue">
+          <Link href="/" className="hover:text-white transition-colors">
+            ← Home
+          </Link>
+          <span className="text-steel"> / </span>
+          <Link href="/blog" className="hover:text-white transition-colors">
+            Blog
           </Link>
         </div>
       </div>
