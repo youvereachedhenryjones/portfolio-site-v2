@@ -9,6 +9,8 @@ const timeline = [
       "Architected serverless ETL pipelines on AWS (Serverless Framework) with S3, Lambda, EventBridge, SQS, DynamoDB, replacing legacy subscription/billing systems, enabling real-time Salesforce-to-SailThru sync via event-driven architecture",
       "Developed privately-hosted AI app enabling chat-based RAG over proprietary historical archive (1977-present)",
       "Integrated internal HR chatbot with OpenAI API for Slack-based RAG access to handbook, PTO, performance goals, org charts",
+      "Designed real-time streaming pipeline with Apache Kafka for event ingestion into DuckDB analytical warehouse, orchestrated by Dagster sensors for automated data freshness",
+      "Built medallion-architecture data platform (staging, intermediate, marts) with dbt Core, 17+ automated data quality tests, and Great Expectations observability suites",
       "DevSecOps best practices to minimize Salesforce-induced outages and bot attacks; optimized checkout flow increasing conversion 12% YoY",
       "Led migration from legacy print subscription management to cloud-first serverless solution, cutting operational costs 75% and manual workload 50%",
     ],
