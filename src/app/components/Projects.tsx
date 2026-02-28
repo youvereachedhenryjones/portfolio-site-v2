@@ -246,9 +246,16 @@ export default function Projects() {
               <p className="relative z-10 text-mutedGray text-sm mb-3 leading-relaxed group-hover:text-gray-200">
                 {project.description}
               </p>
-              <p className="relative z-10 text-xs text-steel mb-4 group-hover:text-gray-300">
-                {project.metrics}
-              </p>
+              <div className="relative z-10 flex flex-wrap gap-1.5 mb-4">
+                {project.metrics.split(" • ").map((metric) => (
+                  <span
+                    key={metric}
+                    className="bg-electricBlue/10 border border-electricBlue/30 text-electricBlue text-xs rounded-full px-3 py-0.5 font-medium"
+                  >
+                    {metric}
+                  </span>
+                ))}
+              </div>
               <div className="relative z-10 flex flex-wrap gap-2 mb-4">
                 {project.tags.map((t) => (
                   <span
