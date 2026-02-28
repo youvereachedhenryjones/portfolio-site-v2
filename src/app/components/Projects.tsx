@@ -287,6 +287,47 @@ export default function Projects() {
             </TiltCard>
           ))}
         </div>
+
+        {/* Currently Building */}
+        <div className="mt-16">
+          <h3 className="font-mono text-lg font-semibold text-white mb-2">Currently Building</h3>
+          <div className="w-12 h-0.5 bg-cyberTeal mb-4 rounded-full" />
+          <p className="text-mutedGray text-sm mb-6 max-w-xl">
+            Side projects I ship on nights and weekends. Proof that I build things end-to-end, not just data layers.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a
+              href="https://roampage.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block bg-charcoal border border-white/10 hover:border-cyberTeal/30 rounded-xl p-5 transition-all duration-200 hover:-translate-y-0.5"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-lg">🗺️</span>
+                <span className="font-mono text-sm font-semibold text-white group-hover:text-cyberTeal transition-colors">Roampage</span>
+                <span className="text-xs text-steel ml-auto">Live</span>
+              </div>
+              <p className="text-xs text-mutedGray leading-relaxed">
+                Trip planner that generates shareable, printable itineraries. Next.js, Supabase, Vercel. No account required to start planning.
+              </p>
+            </a>
+            <a
+              href="https://tryangles.shop"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block bg-charcoal border border-white/10 hover:border-cyberTeal/30 rounded-xl p-5 transition-all duration-200 hover:-translate-y-0.5"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-lg">🥋</span>
+                <span className="font-mono text-sm font-semibold text-white group-hover:text-cyberTeal transition-colors">TryAngles</span>
+                <span className="text-xs text-steel ml-auto">Spring 2026</span>
+              </div>
+              <p className="text-xs text-mutedGray leading-relaxed">
+                BJJ-focused apparel brand. Pre-launch email capture. Next.js, Resend, Supabase.
+              </p>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
