@@ -67,14 +67,14 @@ const projects: Project[] = [
     description:
       "Longevity Consulting's GRC processes were entirely manual, tracked across spreadsheets with no audit trail, no workflow automation, and no visibility across risk domains. I designed and built a full-stack platform with a React front end, Django and FastAPI services, a GraphQL API layer, and containerized deployment on AWS Fargate. The platform gave compliance teams a single source of truth with automated workflows and full audit history.",
     metrics: "Full stack • Enterprise GRC",
-    tags: ["React", "Django", "FastAPI", "GraphQL", "AWS FarGate"],
+    tags: ["React", "Django", "FastAPI", "GraphQL", "AWS Fargate"],
   },
   {
     title: "Roampage: Surprise Trip Planner",
     description:
       "Built a full-stack web app for planning and revealing surprise trips to partners. Features Supabase auth, PIN-protected trip reveal pages, LemonSqueezy payment integration for Pro tier, a 3D globe with real destination markers, and occasion-specific gift landing pages. Shipped from idea to paying product in under 30 days.",
     metrics: "Live at roampage.vercel.app · LemonSqueezy Pro tier",
-    tags: ["Next.js 16", "Supabase", "TypeScript", "Tailwind", "LemonSqueezy", "WebGL"],
+    tags: ["Next.js", "Supabase", "TypeScript", "Tailwind", "LemonSqueezy", "WebGL"],
     link: "https://roampage.vercel.app",
   },
   {

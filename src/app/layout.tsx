@@ -66,7 +66,7 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Person",
                 name: "Ryan Kirsch",
-                jobTitle: "Lead Backend Engineer & Data Engineering",
+                jobTitle: "Lead Backend Engineer & Data Engineer",
                 worksFor: {
                   "@type": "Organization",
                   name: "Philadelphia Inquirer",
