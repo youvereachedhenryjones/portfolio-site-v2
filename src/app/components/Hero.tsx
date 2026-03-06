@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import ParticleBackground from './ParticleBackground';
 
-const headlineWords = ['I', 'build', 'systems', 'that', 'scale.'];
+const headlineWords = ['I', 'build', 'data', 'systems', 'that', 'scale.'];
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();

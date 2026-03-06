@@ -276,7 +276,7 @@ export default function Projects() {
           <h3 className="font-mono text-lg font-semibold text-white mb-2">Currently Building</h3>
           <div className="w-12 h-0.5 bg-cyberTeal mb-4 rounded-full" />
           <p className="text-mutedGray text-sm mb-6 max-w-xl">
-            Side projects I ship on nights and weekends. Proof that I build things end-to-end, not just data layers.
+            Side projects I ship on nights and weekends. Full-stack execution from idea to production.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <a
