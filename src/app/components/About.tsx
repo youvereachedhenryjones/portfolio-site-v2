@@ -10,9 +10,7 @@ export default function About() {
         <div className="space-y-6 text-lightGray leading-relaxed text-base sm:text-lg">
           <p>
             Most people don&apos;t pivot from running a precious metals business to
-            leading backend engineering at a major media company. But most people
-            don&apos;t build production systems that serve millions of readers daily,
-            either.
+            building data platforms that serve a million readers daily. But here we are.
           </p>
           <p>
             After a decade in strategic communications and business operations, I

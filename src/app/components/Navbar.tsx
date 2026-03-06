@@ -9,7 +9,6 @@ const links: { label: string; href: string; external?: boolean; download?: boole
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
   { label: "Blog", href: "/blog" },
-  { label: "Interview Drills", href: "https://drills.ryankirsch.dev", external: true },
   { label: "Resume", href: "/ryan-kirsch-data-engineer-resume.pdf", download: true, external: true },
 ];
 

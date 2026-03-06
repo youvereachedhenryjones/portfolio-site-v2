@@ -1,6 +1,6 @@
 const timeline = [
   {
-    role: "Lead Backend Software Engineer",
+    role: "Senior Data Engineer and Lead Backend Software Engineer",
     company: "The Philadelphia Inquirer",
     period: "Sep 2022 - Present",
     bullets: [

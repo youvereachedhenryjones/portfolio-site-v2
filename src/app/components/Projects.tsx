@@ -69,30 +69,6 @@ const projects: Project[] = [
     metrics: "Full stack • Enterprise GRC",
     tags: ["React", "Django", "FastAPI", "GraphQL", "AWS Fargate"],
   },
-  {
-    title: "Roampage: Surprise Trip Planner",
-    description:
-      "Built a full-stack web app for planning and revealing surprise trips to partners. Features Supabase auth, PIN-protected trip reveal pages, LemonSqueezy payment integration for Pro tier, a 3D globe with real destination markers, and occasion-specific gift landing pages. Shipped from idea to paying product in under 30 days.",
-    metrics: "Live at roampage.vercel.app · LemonSqueezy Pro tier",
-    tags: ["Next.js", "Supabase", "TypeScript", "Tailwind", "LemonSqueezy", "WebGL"],
-    link: "https://roampage.vercel.app",
-  },
-  {
-    title: "Interview Drill Pack",
-    description:
-      "Built and launched a paid digital product for data engineering and AI interview preparation. 50 real interview questions with model answers, scoring rubrics, and a 7-day prep plan. Full marketing funnel: landing page with lead magnet email capture, free 10-question guide, and Gumroad checkout integration.",
-    metrics: "Live at drills.ryankirsch.dev · 50 questions · Gumroad checkout",
-    tags: ["Static HTML/CSS", "FormSubmit", "Gumroad", "Vercel", "SEO", "Product Launch"],
-    link: "https://drills.ryankirsch.dev",
-  },
-  {
-    title: "TryAngles: BJJ Apparel Brand",
-    description:
-      "Designed and built the brand identity and landing page for a BJJ lifestyle apparel brand. Includes a custom Stripe-style WebGL FBM shader mesh gradient written in raw GLSL, mobile fallback CSS gradient, and email capture waitlist flow. Zero dependencies for the WebGL effect.",
-    metrics: "Live at tryangles.shop · WebGL GLSL shader",
-    tags: ["Static HTML", "WebGL / GLSL", "CSS", "JavaScript", "Brand Design"],
-    link: "https://tryangles.shop",
-  },
 ];
 
 const springConfig = { stiffness: 300, damping: 30 };
@@ -315,7 +291,7 @@ export default function Projects() {
                 <span className="text-xs text-steel ml-auto">Live</span>
               </div>
               <p className="text-xs text-mutedGray leading-relaxed">
-                Trip planner that generates shareable, printable itineraries. Next.js, Supabase, Vercel. No account required to start planning.
+                Surprise trip planner with PIN-protected reveal pages, itinerary builder, and LemonSqueezy Pro tier. Next.js, Supabase, Vercel.
               </p>
             </a>
             <a
@@ -330,7 +306,7 @@ export default function Projects() {
                 <span className="text-xs text-steel ml-auto">Spring 2026</span>
               </div>
               <p className="text-xs text-mutedGray leading-relaxed">
-                BJJ-focused apparel brand. Pre-launch email capture. Next.js, Resend, Supabase.
+                BJJ lifestyle apparel brand. Pre-launch email capture. Static site with custom WebGL GLSL shader.
               </p>
             </a>
           </div>

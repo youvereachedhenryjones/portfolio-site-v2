@@ -57,11 +57,12 @@ export default function Contact() {
         <div className="w-16 h-1 bg-electricBlue mb-8 rounded-full mx-auto" />
 
         <p className="text-mutedGray text-base sm:text-lg leading-relaxed mb-4">
-          I&apos;m always interested in challenging backend problems, cloud
-          architecture discussions, and opportunities to build systems that scale.
-          If you&apos;re looking to optimize infrastructure, design data
-          pipelines, or need someone who can translate business requirements into
-          robust technical solutions, I&apos;d like to hear from you.
+          I&apos;m always interested in challenging data engineering problems,
+          pipeline architecture, and opportunities to build the infrastructure
+          that powers intelligent applications. If you&apos;re looking to move
+          off legacy ETL, build a modern data platform, or need someone who
+          translates business requirements into production-grade pipelines,
+          I&apos;d like to hear from you.
         </p>
 
         <p className="text-sm text-steel mb-8">

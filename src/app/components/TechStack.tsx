@@ -16,6 +16,7 @@ const categories = [
       "Snowflake",
       "BigQuery",
       "Apache Airflow",
+      "Great Expectations",
     ],
   },
   {
